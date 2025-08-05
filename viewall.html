@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eHospital Modules</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #e3f2fd, #bbdefb);
+        }
+
+        .section-title {
+            text-align: center;
+            font-weight: bold;
+            color: #0d47a1;
+            margin: 40px 0;
+            text-shadow: 1px 1px 3px #90caf9;
+        }
+
+        .module-card {
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out;
+            padding: 20px;
+            background-color: #ffffff;
+            border: 2px solid #90caf9;
+        }
+
+        .module-card:hover {
+            transform: translateY(-10px);
+            background: #e3f2fd;
+            border-color: #64b5f6;
+        }
+
+        .module-icon {
+            font-size: 2.5rem;
+            color: #0d47a1;
+            margin-bottom: 10px;
+            text-shadow: 1px 1px 3px #64b5f6;
+        }
+
+        h5 {
+            color: #1565c0;
+        }
+
+        p {
+            color: #424242;
+        }
+
+        .view-all-btn {
+            background-color: #0d47a1;
+            color: white;
+            border: none;
+            margin-top: 20px;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .view-all-btn:hover {
+            background-color: #1565c0;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .hidden-modules {
+            display: none; /* Hidden initially */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <div class="container">
+        <h1 class="section-title">eHospital Modules</h1>
+    </div>
+
+    <!-- Modules Section -->
+    <div class="container">
+        <div class="row g-4">
+            <!-- Patient Registration -->
+            <div class="col-md-6">
+                <div class="module-card h-100">
+                    <div class="module-icon text-center">
+                        <i class="fas fa-user-plus"></i>
+                    </div>
+                    <h5 class="text-center fw-bold">Patient Registration (OPD, Casualty, Appointment & ORS)</h5>
+                    <p class="text-center">
+                        The patient registration module of the eHospital application is used for patient registration in the OPD and Casualty departments as well as to book, confirm and cancel appointments.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Admission, Discharge & Transfer -->
+            <div class="col-md-6">
+                <div class="module-card h-100">
+                    <div class="module-icon text-center">
+                        <i class="fas fa-procedures"></i>
+                    </div>
+                    <h5 class="text-center fw-bold">Admission, Discharge & Transfer (IPD)</h5>
+                    <p class="text-center">
+                        The IPD module commences when the patient is being registered and allotted a bed in the ward. It deals with the complete treatment and services provided to the patient during their stay in the hospital.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Billing -->
+            <div class="col-md-6">
+                <div class="module-card h-100">
+                    <div class="module-icon text-center">
+                        <i class="fas fa-file-invoice-dollar"></i>
+                    </div>
+                    <h5 class="text-center fw-bold">Billing</h5>
+                    <p class="text-center">
+                        The Billing module handles all types of billing workflows. This module facilitates cashier and billing operators for managing billing functions related to billing receipts and refunds.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Clinic (OPD & IPD) -->
+            <div class="col-md-6">
+                <div class="module-card h-100">
+                    <div class="module-icon text-center">
+                        <i class="fas fa-clinic-medical"></i>
+                    </div>
+                    <h5 class="text-center fw-bold">Clinic (OPD & IPD)</h5>
+                    <p class="text-center">
+                        The Clinic module allows the clinicians and doctors to record the clinical data of the patients like visits, examination, diagnosis, history, treatment, prescriptions, investigations, and procedures.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hidden Modules Section -->
+        <div class="hidden-modules">
+            <div class="row g-4 mt-3">
+                <!-- Lab Information System -->
+                <div class="col-md-6">
+                    <div class="module-card h-100">
+                        <h5 class="text-center fw-bold">Lab Information System (LIS)</h5>
+                        <p class="text-center">
+                            Automates laboratory tasks such as ordering tests, analyzing results, and managing lab workflows.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Radiology Information System -->
+                <div class="col-md-6">
+                    <div class="module-card h-100">
+                        <h5 class="text-center fw-bold">Radiology Information System (RIS)</h5>
+                        <p class="text-center">
+                            Manages radiology workflows, scheduling tests, verifying results, and providing clinical treatment.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Store & Pharmacy -->
+                <div class="col-md-6">
+                    <div class="module-card h-100">
+                        <h5 class="text-center fw-bold">Store & Pharmacy</h5>
+                        <p class="text-center">
+                            Manages medical stores, inventory, and supplies across the hospital departments.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- OT Management -->
+                <div class="col-md-6">
+                    <div class="module-card h-100">
+                        <h5 class="text-center fw-bold">OT Management</h5>
+                        <p class="text-center">
+                            Automates workflows and functions of hospital operation theatres.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Dietary -->
+                <div class="col-md-6">
+                    <div class="module-card h-100">
+                        <h5 class="text-center fw-bold">Dietary</h5>
+                        <p class="text-center">
+                            Manages dietary services provided to patients.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Ambulance -->
+                <div class="col-md-6">
+                    <div class="module-card h-100">
+                        <h5 class="text-center fw-bold">Ambulance</h5>
+                        <p class="text-center">
+                            Automates ambulance management and patient transportation.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- View All Button -->
+        <div class="text-center">
+            <button id="viewAllBtn" class="btn view-all-btn px-4 py-2">View All</button>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        document.getElementById('viewAllBtn').addEventListener('click', function() {
+            document.querySelector('.hidden-modules').style.display = 'block';
+            this.style.display = 'none';
+        });
+    </script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- FontAwesome for Icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+</html>

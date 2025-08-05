@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact Us - NextGen eHospital</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #d4e0ea, #446a89);
+    }
+
+    /*.contact-header {
+      background-color: #007bff;
+      color: white;
+      padding: 20px 0;
+    }
+
+    .contact-header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    .contact-section {
+      padding: 40px 0;
+    }
+
+    .contact-info h5 {
+      color: #007bff;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      border: 1px solid #ced4da;
+      border-radius: 5px;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: #007bff;
+      box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    }*/
+    /* Navbar Styling */
+    .navbar {
+      background-color: #01326f;
+      color: white;
+   }
+
+  .navbar-brand h5 {
+      color: #fff;
+      font-size: 1.25rem;
+   }
+
+  .navbar-brand small {
+      color: #c5c5c5;
+      font-size: 0.85rem;
+   }
+
+  .navbar-nav .nav-link {
+      color: white;
+      font-weight: bold;
+      text-shadow: 1px 1px 3px black;
+   }
+
+  .navbar-nav .nav-link:hover {
+      color: #ffcc00;
+      text-shadow: 1px 1px 3px black;
+      font-weight: bold;
+    }
+
+    .map-placeholder {
+      background-color: #e9ecef;
+      height: 300px;
+      width: 100%;
+      border-radius: 5px;
+      color: #6c757d;
+      text-align: center;
+      position: relative;
+    }
+
+    .map-placeholder iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      border: 0;
+      border-radius: 5px;
+    }
+
+    .footer {
+      background-color: #343a40;
+      color: white;
+      padding: 20px 0;
+    }
+    .navbar-brand h4 {
+      font-size: 2rem;
+      text-align: center;
+  }
+  .navbar-brand small {
+    font-size: 1.0rem;
+  }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+        <a class="navbar-brand d-flex  flex-column flex-lg-row align-items-center" href="#">
+            <img src="C:\Users\hp\OneDrive\Documents\Desktop\wadprojects\loginlogo.png" alt="Logo" class="me-2">
+            <div>
+                <h4>LifeCare eHospital</h4>
+                <small>Ministry of Health and Family Welfare</small>
+            </div>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link active" href="contactus.html"><h5>Contact Us</h5></a></li>
+                <li class="nav-item"><a class="nav-link" href="loginpage.html"><h5>Login Page</h5></a></li>
+                <li class="nav-item"><a class="nav-link" href=" ehospital.html"><h5>Dashboard</h5></a></li>
+                <li class="nav-item"><a class="nav-link" href="showmore.html"><h5>About Us</h5></a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+  <!-- Contact Section -->
+  <div class="contact-section">
+    <div class="container">
+      <div class="row">
+        <!-- Contact Info -->
+        <div class="col-md-6 text-color:black">
+          <h2><b>Contact Information</b></h2>
+          <div class="contact-info mt-4">
+            <h5>Email</h5>
+            <p>info@lifecareehospital.com</p>
+
+            <h5>Phone</h5>
+            <p>+1 (234) 567-890</p>
+
+            <h5>Address</h5>
+            <p>123 Main Street, Healthcare City</p>
+          </div>
+
+          <!-- Map Placeholder -->
+          <div class="map-placeholder mt-5">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.33512372342!2d-122.41941608468169!3d37.77492977975995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80858064f5f6a5a3%3A0x0!2sNextGen%20eHospital!5e0!3m2!1sen!2sus!4v1694222423414!5m2!1sen!2sus" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="col-md-6 text-color:black">
+          <h2><b>Send Us a Message</b></h2>
+          <form class="contact-form mt-4" onsubmit="saveMessage(event)">
+            <div class="mb-3 text-color:balck">
+              <label for="name" class="form-label">Your Name</label>
+              <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Your Email</label>
+              <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+            </div>
+            <div class="mb-3">
+              <label for="phone" class="form-label">Phone Number</label>
+              <input type="text" class="form-control" id="phone" placeholder="+91" required>
+            </div>
+            <div class="mb-3">
+              <label for="message" class="form-label">Message</label>
+              <textarea class="form-control" id="message" rows="4" placeholder="Enter your message" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer text-center">
+    <p>&copy; 2024 LifeCare eHospital. All Rights Reserved.</p>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- JavaScript -->
+  <script>
+    function saveMessage(event) {
+      event.preventDefault(); // Prevent form submission
+
+      // Get form values
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const phone = document.getElementById('phone').value;
+      const message = document.getElementById('message').value;
+
+      // Save data to localStorage
+      const contactData = { name, email, phone, message };
+      const messages = JSON.parse(localStorage.getItem('contactMessages')) || [];
+      messages.push(contactData);
+      localStorage.setItem('contactMessages', JSON.stringify(messages));
+
+      // Show success message
+      alert('Your message has been saved. Thank you for contacting us!');
+
+      // Reset form
+      document.querySelector('.contact-form').reset();
+    }
+  </script>
+</body>
+</html>

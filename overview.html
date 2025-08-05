@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>eHospital Dashboard</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+        background: linear-gradient(to right, #bdc8d5, #386775);
+        font-family: 'Arial', sans-serif;
+    }
+
+    .card-body {
+      padding: 2rem;
+    }
+
+    .chart-container {
+      margin-top: 20px;
+      margin-bottom: 20px; 
+    }
+    
+    .row {
+      margin-bottom: 30px;
+      margin-top: 30px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+     /* Navbar Styling */
+     .navbar {
+        background-color: #01326f;
+        color: white;
+    }
+
+    .navbar-brand h5 {
+        color: #fff;
+        font-size: 1.25rem;
+    }
+
+    .navbar-brand small {
+        color: #c5c5c5;
+        font-size: 0.85rem;
+    }
+
+    .navbar-nav .nav-link {
+        color: white;
+        font-weight: bold;
+        text-shadow: 1px 1px 3px black;
+    }
+
+    .navbar-nav .nav-link:hover {
+        color: #ffcc00;
+        text-shadow: 1px 1px 3px black;
+        font-weight: bold;
+    }
+    .navbar-brand h5 {
+        font-size: 1rem;
+    }
+
+    .navbar-brand small {
+        font-size: 0.75rem;
+    }
+
+    /* Footer Styling */
+    footer {
+      background-color: #01326f;
+      color: white;
+      padding: 10px 0;
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    footer a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand d-flex  flex-column flex-lg-row align-items-center" href="#">
+                <img src="C:\Users\hp\OneDrive\Documents\Desktop\wadprojects\loginlogo.png" alt="Logo" class="me-2">
+                <div>
+                    <h5>LifeCare eHospital</h5>
+                    <small>Ministry of Health and Family Welfare</small>
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="overview.html"><h5>Overview</h5></a></li>
+                    <li class="nav-item"><a class="nav-link" href="ehospital.html"><h5>Dashboard</h5></a></li>
+                    <li class="nav-item"><a class="nav-link" href="showmore.html"><h5>About Us</h5></a></li>
+                    <li class="nav-item"><a class="nav-link" href="contactus.html"><h5>Contact Us</h5></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Section 1: Availability of Doctors (Bar Chart) -->
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header">
+            Availability of Doctors
+          </div>
+          <div class="card-body">
+            <canvas id="doctorsChart"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 2: Visiting of Patients (Pie Chart) -->
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header">
+            Visiting of Patients
+          </div>
+          <div class="card-body">
+            <canvas id="patientsChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 3: Staff Availability (Bar Chart) -->
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header">
+            Staff Availability
+          </div>
+          <div class="card-body">
+            <canvas id="staffChart"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 4: Availability of Medicines (Pie Chart) -->
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header">
+            Availability of Medicines
+          </div>
+          <div class="card-body">
+            <canvas id="medicinesChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 5: Total OPD Registration (Bar Chart) -->
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header">
+            Total OPD Registration
+          </div>
+          <div class="card-body">
+            <canvas id="opdChart"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 6: Prescriptions Generated (Pie Chart) -->
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header">
+            Prescriptions Generated
+          </div>
+          <div class="card-body">
+            <canvas id="prescriptionsChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 7: Total Billing Transactions (Bar Chart) -->
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header">
+            Total Billing Transactions
+          </div>
+          <div class="card-body">
+            <canvas id="billingChart"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 8: Total Certificates Transactions (Pie Chart) -->
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header">
+            Total Certificates Transactions
+          </div>
+          <div class="card-body">
+            <canvas id="certificatesChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS and dependencies -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
+  <!-- Chart.js for graph rendering -->
+  <script>
+    // Doctors Availability Bar Chart
+    var ctx1 = document.getElementById('doctorsChart').getContext('2d');
+    var doctorsChart = new Chart(ctx1, {
+      type: 'bar',
+      data: {
+        labels: ['Doctor 1', 'Doctor 2', 'Doctor 3', 'Doctor 4'],
+        datasets: [{
+          label: 'Availability of Doctors',
+          data: [5, 3, 7, 4],
+          backgroundColor: ['#4e73df', '#1cc88a', '#36b9cc', '#f6c23e'],
+          borderColor: ['#4e73df', '#1cc88a', '#36b9cc', '#f6c23e'],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+
+    // Patients Visits Pie Chart
+    var ctx2 = document.getElementById('patientsChart').getContext('2d');
+    var patientsChart = new Chart(ctx2, {
+      type: 'pie',
+      data: {
+        labels: ['Visit 1', 'Visit 2', 'Visit 3'],
+        datasets: [{
+          label: 'Patients Visits',
+          data: [30, 45, 25],
+          backgroundColor: ['#4e73df', '#1cc88a', '#36b9cc'],
+          borderWidth: 1
+        }]
+      }
+    });
+
+    // Staff Availability Bar Chart
+    var ctx3 = document.getElementById('staffChart').getContext('2d');
+    var staffChart = new Chart(ctx3, {
+      type: 'bar',
+      data: {
+        labels: ['Staff 1', 'Staff 2', 'Staff 3'],
+        datasets: [{
+          label: 'Staff Availability',
+          data: [10, 7, 9],
+          backgroundColor: ['#4e73df', '#1cc88a', '#36b9cc'],
+          borderColor: ['#4e73df', '#1cc88a', '#36b9cc'],
+          borderWidth: 1
+        }]
+      }
+    });
+
+    // Medicines Availability Pie Chart
+    var ctx4 = document.getElementById('medicinesChart').getContext('2d');
+    var medicinesChart = new Chart(ctx4, {
+      type: 'pie',
+      data: {
+        labels: ['Available', 'Out of Stock'],
+        datasets: [{
+          label: 'Medicines Availability',
+          data: [60, 40],
+          backgroundColor: ['#4e73df', '#e74a3b'],
+          borderWidth: 1
+        }]
+      }
+    });
+
+    // OPD Registration Bar Chart
+    var ctx5 = document.getElementById('opdChart').getContext('2d');
+    var opdChart = new Chart(ctx5, {
+      type: 'bar',
+      data: {
+        labels: ['Day 1', 'Day 2', 'Day 3'],
+        datasets: [{
+          label: 'Total OPD Registration',
+          data: [200, 150, 180],
+          backgroundColor: ['#4e73df', '#1cc88a', '#36b9cc'],
+          borderColor: ['#4e73df', '#1cc88a', '#36b9cc'],
+          borderWidth: 1
+        }]
+      }
+    });
+
+    // Prescriptions Generated Pie Chart
+    var ctx6 = document.getElementById('prescriptionsChart').getContext('2d');
+    var prescriptionsChart = new Chart(ctx6, {
+      type: 'pie',
+      data: {
+        labels: ['Generated', 'Not Generated'],
+        datasets: [{
+          label: 'Prescriptions Generated',
+          data: [80, 20],
+          backgroundColor: ['#4e73df', '#e74a3b'],
+          borderWidth: 1
+        }]
+      }
+    });
+
+    // Billing Transactions Bar Chart
+    var ctx7 = document.getElementById('billingChart').getContext('2d');
+    var billingChart = new Chart(ctx7, {
+      type: 'bar',
+      data: {
+        labels: ['Transaction 1', 'Transaction 2', 'Transaction 3'],
+        datasets: [{
+          label: 'Total Billing Transactions',
+          data: [5000, 7000, 6000],
+          backgroundColor: ['#4e73df', '#1cc88a', '#36b9cc'],
+          borderColor: ['#4e73df', '#1cc88a', '#36b9cc'],
+          borderWidth: 1
+        }]
+      }
+    });
+
+    // Certificates Transactions Pie Chart
+    var ctx8 = document.getElementById('certificatesChart').getContext('2d');
+    var certificatesChart = new Chart(ctx8, {
+      type: 'pie',
+      data: {
+        labels: ['Issued', 'Not Issued'],
+        datasets: [{
+          label: 'Certificates Transactions',
+          data: [65, 35],
+          backgroundColor: ['#4e73df', '#e74a3b'],
+          borderWidth: 1
+        }]
+      }
+    });
+  </script>
+  
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 LifeCare eHospital. All rights reserved.</p>
+    <p>For more information, visit <a href="showmore.html">About Us</a> or contact us at <a href="contactus.html">Contact Us</a>.</p>
+  </footer>
+</body>
+
+</html>

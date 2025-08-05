@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Doctor Appointment</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+        background: linear-gradient(to right, #bdc8d5, #386775);
+        font-family: 'Arial', sans-serif;
+    }
+
+    .container {
+      margin-top: 50px;
+    }
+
+    .card-header {
+      background-color: #17307d;
+      color: white;
+    }
+
+    .form-group label {
+      font-weight: bold;
+    }
+
+    .card-body {
+      padding: 2rem;
+      background: linear-gradient(to right, #174063, #446a89);
+    }
+
+    .alert {
+      display: none;
+    }
+
+    .alert-success {
+      background-color: #28a745;
+      color: white;
+    }
+
+    .alert-danger {
+      background-color: #dc3545;
+      color: white;
+    }
+    
+    /* Navbar Styling */
+    .navbar {
+        background-color: #01326f;
+        color: white;
+    }
+
+    .navbar-brand h5 {
+        color: #fff;
+        font-size: 1.25rem;
+    }
+
+    .navbar-brand small {
+        color: #c5c5c5;
+        font-size: 0.85rem;
+    }
+
+    .navbar-nav .nav-link {
+        color: white;
+        font-weight: bold;
+        text-shadow: 1px 1px 3px black;
+    }
+
+    .navbar-nav .nav-link:hover {
+        color: #ffcc00;
+        text-shadow: 1px 1px 3px black;
+        font-weight: bold;
+    }
+    .navbar-brand h4 {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .navbar-brand small {
+        font-size: 0.75rem;
+    }
+
+    /* Footer Styles */
+    footer {
+      background-color: #16338a;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    footer a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand d-flex  flex-column flex-lg-row align-items-center" href="#">
+                <img src="C:\Users\hp\OneDrive\Documents\Desktop\wadprojects\loginlogo.png" alt="Logo" class="me-2">
+                <div>
+                    <h4>LifeCare eHospital</h4>
+                    <small>Ministry of Health and Family Welfare</small>
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="apointment.html"><h5>Appointment</h5></a></li>
+                    <li class="nav-item"><a class="nav-link" href="ehospital.html"><h5>Dashboard</h5></a></li>
+                    <li class="nav-item"><a class="nav-link" href="overview.html"><h5>Overview</h5></a></li>
+                    <li class="nav-item"><a class="nav-link" href="contactus.html"><h5>Contact Us</h5></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+  <div class="container">
+    <h1 class="text-center mb-4">Book a Doctor Appointment</h1>
+
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <!-- Appointment Booking Card -->
+        <div class="card">
+          <div class="card-header text-center">
+            Select Doctor and Book Appointment
+          </div>
+          <div class="card-body">
+            <!-- Success or Error Alert -->
+            <div id="successAlert" class="alert alert-success">
+              Appointment successfully booked!
+            </div><br>
+            <div id="errorAlert" class="alert alert-danger">
+              Please fill all required fields.
+            </div><br>
+
+            <!-- Appointment Form -->
+            <form id="appointmentForm">
+              <div class="form-group">
+                <label for="doctorName">Doctor Name</label>
+                <select class="form-control" id="doctorName" required>
+                  <option value="">Select Doctor</option>
+                  <option value="Dr. John Smith">Dr. John Smith - Cardiologist</option>
+                  <option value="Dr. Emily Davis">Dr. Emily Davis - Dermatologist</option>
+                  <option value="Dr. Michael Brown">Dr. Michael Brown - Orthopedic</option>
+                  <option value="Dr. Sarah Johnson">Dr. Sarah Johnson - Pediatrician</option>
+                  <option value="Dr. David Lee">Dr. David Lee - Neurologist</option>
+                  <option value="Dr. Lily Thompson">Dr. Lily Thompson - Gastroenterologist</option>
+                  <option value="Dr. Robert Harris">Dr. Robert Harris - Endocrinologist</option>
+                  <option value="Dr. Olivia Martin">Dr. Olivia Martin - Obstetrician</option>
+                  <option value="Dr. William Clark">Dr. William Clark - Urologist</option>
+                  <option value="Dr. Patricia Lewis">Dr. Patricia Lewis - Dermatologist</option>
+                  <option value="Dr. James Walker">Dr. James Walker - Psychiatrist</option>
+                  <option value="Dr. Elizabeth Hall">Dr. Elizabeth Hall - Rheumatologist</option>
+                  <option value="Dr. Richard Scott">Dr. Richard Scott - Pulmonologist</option>
+                  <option value="Dr. Nancy Young">Dr. Nancy Young - Hematologist</option>
+                </select>
+              </div><br>
+
+              <div class="form-group">
+                <label for="patientName">Your Name</label>
+                <input type="text" class="form-control" id="patientName" placeholder="Enter your name" required>
+              </div><br>
+
+              <div class="form-group">
+                <label for="patientEmail">Email Address</label>
+                <input type="email" class="form-control" id="patientEmail" placeholder="Enter your email" required>
+              </div><br>
+
+              <div class="form-group">
+                <label for="appointmentDate">Appointment Date</label>
+                <input type="date" class="form-control" id="appointmentDate" required>
+              </div><br>
+
+              <div class="form-group">
+                <label for="appointmentTime">Appointment Time</label>
+                <input type="time" class="form-control" id="appointmentTime" required>
+              </div><br>
+
+              <button type="submit" class="btn btn-primary btn-block mt-3">Book Appointment</button><br>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS and dependencies -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
+  <script>
+    // Appointment form submission logic
+    document.getElementById("appointmentForm").addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      // Getting form values
+      var doctorName = document.getElementById("doctorName").value;
+      var patientName = document.getElementById("patientName").value;
+      var patientEmail = document.getElementById("patientEmail").value;
+      var appointmentDate = document.getElementById("appointmentDate").value;
+      var appointmentTime = document.getElementById("appointmentTime").value;
+
+      // Check if all required fields are filled
+      if (doctorName && patientName && patientEmail && appointmentDate && appointmentTime) {
+        // Hide error alert and show success alert
+        document.getElementById("errorAlert").style.display = "none";
+        document.getElementById("successAlert").style.display = "block";
+
+        // Optionally, you can reset the form after submission
+        document.getElementById("appointmentForm").reset();
+      } else {
+        // Show error alert if any field is missing
+        document.getElementById("errorAlert").style.display = "block";
+        document.getElementById("successAlert").style.display = "none";
+      }
+    });
+  </script>
+
+  <!-- Footer Section -->
+  <footer>
+    <p>&copy; 2025 eHospital. All Rights Reserved.</p>
+    <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+  </footer>
+</body>
+
+</html>
